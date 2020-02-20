@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe</title>
+</head>
+<body>
+
+    <h2>Show page for <%= @recipe.name %></h2>
+
+    <div>
+        <%= @recipe.ingredients%>
+    </div>
+
+    <div>
+        <%= @recipe.cook_time%>
+    </div>
+
+    <a href="/recipes/<%= @recipe.id %>/edit">Edit this recipe</a>
+    <a href="/recipes">Back to Index Page</a>
+
+    <form action="/recipes/<%= @recipe.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete", name="submit">
+    </form>
+    
+</body>
+</html>
+
